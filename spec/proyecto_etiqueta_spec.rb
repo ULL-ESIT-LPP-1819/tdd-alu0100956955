@@ -12,7 +12,7 @@ RSpec.describe ProyectoEtiqueta do
 # Nombre, Valor, Grasas, Grasa saturadas, Hidratos, Azucares, Proteinas, Sal.
 # Cantidad de prociones , Cantidad en gramos de una porcion)	
 	before :each do
-		@eti1 = Etiqueta.new("carne",20.0,10.0,30,5,30,2,5,200,1000)
+		@eti1 = Etiqueta.new("carne",20.0,10.0,30.0,5,30,2,5,200,1000)
 	end
 
 	describe "# almacenamos los nutrientes" do
@@ -111,6 +111,11 @@ RSpec.describe ProyectoEtiqueta do
                         @eti1.asignar_hidratos(40)
                         expect(@eti1.hidratos).to eq(40)
                 end
+		it "La fila de los hidratos es correcta" do
+			expect(@eti1.get_hidratos).to eq("| 30.0 | 3.0 | 1.2% | 6.0 | 2.3% |")
+                end
+
+
         end
 
 	# Pruebas para los azucares
