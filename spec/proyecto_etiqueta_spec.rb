@@ -154,7 +154,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.sal).to eq(3)
                 end
 		it "La fila de la sal es correcta" do
-			expect(@eti1.get_sal).to eq("| 6 | 0.1 | 1.0% | 0.1 | 1.2% |")
+			expect(@eti1.get_sal).to eq("| 2.0 | 0.2 | 3.3% | 0.4 | 6.7% |")
                 end
 
         end

@@ -109,6 +109,14 @@ class Etiqueta
         def asignar_sal(sal)
                 @sal=sal
         end
+	def get_sal
+                @_100=((@sal*100)/@peso)
+                @ir_100=(@_100/6)*100
+                @porcion=((@sal*@gramos_porciones)/@peso)
+                @ir_porcion=(@porcion/6)*100
+                "| #{@sal} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+        end
+
 
 
 
