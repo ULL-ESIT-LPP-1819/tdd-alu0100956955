@@ -65,6 +65,13 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.grasas).to eq(30)
                 end
         end
+	describe "# Comprobamos que podemos asignar y ver las grasas Saturadas" do
+                it "Las grasas Saturadas almacenadas son correctas" do
+                        @eti1.asignar_saturadas(20)
+                        expect(@eti1.saturadas).to eq(20)
+                end
+        end
+
 
 
 
