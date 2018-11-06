@@ -33,6 +33,12 @@ class Etiqueta
 
 
 	# Funciones para el valor energetico
+	def asignar_valorKj(valor)
+                @valorKj=valor
+        end
+        def asignar_valorKcal(valor)
+                @valorKcal=valor
+        end
 
 
 
