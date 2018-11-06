@@ -71,6 +71,12 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.saturadas).to eq(20)
                 end
         end
+	describe "# Comprobamos que podemos asignar y ver los hidratos" do
+                it "Los hidratos son correctas" do
+                        @eti1.asignar_hidratos(40)
+                        expect(@eti1.hidratos).to eq(40)
+                end
+        end
 
 
 
