@@ -13,7 +13,7 @@ RSpec.describe ProyectoEtiqueta do
 		@eti1 = Etiqueta.new("carne",100,20,10,30,5,30,2)
 	end
 
-	describe ProyectoEtiqueta, "# almacenamos los nutrientes" do
+	describe "# almacenamos los nutrientes" do
                 it "El nombre es el correcto" do
                         expect(@eti1.nombre).to eq("carne")
                 end
