@@ -48,6 +48,13 @@ class Etiqueta
         end
 
 
+	# Funciones para las proteinas
+        def asignar_proteinas(proteinas)
+                @proteinas=proteinas
+        end
+
+
+
 
 
 
