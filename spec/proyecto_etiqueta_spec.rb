@@ -48,11 +48,11 @@ RSpec.describe ProyectoEtiqueta do
                 end
 		
 		it "La cantidad de porciones se inicializo de forma correcta" do
-			expect(@eti1.porcion).to eq(1)
+			expect(@eti1.porciones).to eq(1)
 		end
 
 		it "La cantidad de gramos por porcion se inicializo de forma correcta" do
-			expect(@eti1.porcion_gramos).to eq(200)
+			expect(@eti1.gramos_porciones).to eq(200)
 		end
 
 	end

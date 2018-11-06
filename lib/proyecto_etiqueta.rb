@@ -6,10 +6,10 @@
 #end
 
 class Etiqueta
-        attr_reader :nombre, :valor, :grasas, :saturadas, :hidratos, :azucares, :proteinas, :sal
+        attr_reader :nombre, :valor, :grasas, :saturadas, :hidratos, :azucares, :proteinas, :sal, :porciones, :gramos_porciones
 
-        def initialize(nombre,valor,grasas,saturadas,hidratos,azucares,proteinas,sal)
-                @nombre, @valor, @grasas, @saturadas, @hidratos, @azucares, @proteinas, @sal = nombre,valor,grasas,saturadas,hidratos,azucares,proteinas,sal
+        def initialize(nombre,valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,gramos_porciones)
+                @nombre, @valor, @grasas, @saturadas, @hidratos, @azucares, @proteinas, @sal,@porciones,@gramos_porciones = nombre,valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,gramos_porciones
         end
 
 	# Funciones para el nombre de la etiqueta
