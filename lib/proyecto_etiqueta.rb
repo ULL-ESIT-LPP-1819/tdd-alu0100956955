@@ -34,6 +34,12 @@ class Etiqueta
         def asignar_saturadas(saturadas)
                 @saturadas=saturadas
         end
+	
+
+	# Funciones para los hidratos de carbono
+        def asignar_hidratos(hidratos)
+                @hidratos=(hidratos)
+        end
 
 
 
