@@ -47,6 +47,14 @@ RSpec.describe ProyectoEtiqueta do
 
 	end
 
+	describe "# Comprobamos que podemos asignar y ver el nombre de la etiqueta" do
+                it "El nombre de la etiqueta es correcto" do
+                        @eti1.asignar_nombre("pescado")
+                        expect(@eti1.nombre).to eq("pescado")
+                end
+        end
+
+
 
 	
 end
