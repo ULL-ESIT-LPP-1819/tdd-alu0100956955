@@ -66,6 +66,15 @@ class Etiqueta
         def asignar_hidratos(hidratos)
                 @hidratos=(hidratos)
         end
+	def get_hidratos
+                @_100=((@hidratos*100)/@peso)
+                @ir_100=(@_100/260)*100
+                @porcion=((@hidratos*@gramos_porciones)/@peso)
+                @ir_porcion=(@porcion/260)*100
+                "| #{@hidratos} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+        end
+
+
 
 
 	# Funciones para los azucares
