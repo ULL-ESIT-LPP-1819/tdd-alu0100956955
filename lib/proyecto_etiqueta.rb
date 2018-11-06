@@ -50,6 +50,14 @@ class Etiqueta
         def asignar_saturadas(saturadas)
                 @saturadas=saturadas
         end
+	def get_saturadas
+                @_100=((@saturadas*100)/@peso)
+                @ir_100=(@_100/20)*100
+                @porcion=((@saturadas*@gramos_porciones)/@peso)
+                @ir_porcion=(@porcion/20)*100
+                "| #{@saturadas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+        end
+
 
 
 	
