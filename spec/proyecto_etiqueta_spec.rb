@@ -1,7 +1,6 @@
 require 'proyecto_etiqueta.rb'
 
 RSpec.describe ProyectoEtiqueta do
-# Nombre, Valor, Grasas, Grasa saturadas, Hidratos, Azucares, Proteinas, Sal.
 #  it "has a version number" do
 #    expect(ProyectoEtiqueta::VERSION).not_to be nil
 #  end
@@ -9,8 +8,11 @@ RSpec.describe ProyectoEtiqueta do
 #  it "does something useful" do
 #    expect(false).to eq(true)
 #  end
+
+# Nombre, Valor, Grasas, Grasa saturadas, Hidratos, Azucares, Proteinas, Sal.
+# Cantidad de prociones , Cantidad en gramos de una porcion)	
 	before :each do
-		@eti1 = Etiqueta.new("carne",100,20,10,30,5,30,2)
+		@eti1 = Etiqueta.new("carne",100,20,10,30,5,30,2,1,200)
 	end
 
 	describe "# almacenamos los nutrientes" do
@@ -44,6 +46,14 @@ RSpec.describe ProyectoEtiqueta do
                 it "La sal se inicializo de forma correcta" do
                         expect(@eti1.sal).to eq(2)
                 end
+		
+		it "La cantidad de porciones se inicializo de forma correcta" do
+			expect(@eti1.porcion).to eq(1)
+		end
+
+		it "La cantidad de gramos por porcion se inicializo de forma correcta" do
+			expect(@eti1.porcion_gramos).to eq(200)
+		end
 
 	end
 
