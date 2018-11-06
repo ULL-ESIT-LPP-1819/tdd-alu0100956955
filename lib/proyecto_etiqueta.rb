@@ -30,6 +30,13 @@ class Etiqueta
 	end
 
 
+	# Funciones para las grasas saturadas
+        def asignar_saturadas(saturadas)
+                @saturadas=saturadas
+        end
+
+
+
 
 
 
