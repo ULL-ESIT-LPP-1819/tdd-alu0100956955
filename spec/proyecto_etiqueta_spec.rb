@@ -53,6 +53,13 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.nombre).to eq("pescado")
                 end
         end
+	describe "# Comprobamos que podemos asignar y ver el valor nutricional" do
+                it "El valor energetico almacenado es correcto" do
+                        @eti1.asignar_valor(120)
+                        expect(@eti1.valor).to eq(120)
+                end
+        end
+
 
 
 
