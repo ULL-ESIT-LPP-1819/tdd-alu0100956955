@@ -54,6 +54,13 @@ class Etiqueta
         end
 
 
+	# Funciones para la sal
+        def asignar_sal(sal)
+                @sal=sal
+        end
+
+
+
 
 
 
