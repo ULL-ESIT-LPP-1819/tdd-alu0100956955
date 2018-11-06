@@ -24,6 +24,12 @@ class Etiqueta
         end
 
 
+	# Funciones para el valor de grasas
+	def asignar_grasas(grasas)
+		@grasas=grasas
+	end
+
+
 
 
 
