@@ -128,7 +128,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.azucares).to eq(10)
                 end
 		it "La fila de los azucares es correcta" do
-			expect(@eti1.get_azucares).to eq("| 5.0 | 0.5 | 1% | 1.0 | 1.1% |")
+			expect(@eti1.get_azucares).to eq("| 5.0 | 0.5 | 0.6% | 1.0 | 1.1% |")
                 end
 
         end

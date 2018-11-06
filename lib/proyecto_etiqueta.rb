@@ -81,6 +81,14 @@ class Etiqueta
         def asignar_azucares(azucares)
                 @azucares=azucares
         end
+	def get_azucares
+                @_100=((@azucares*100)/@peso)
+                @ir_100=(@_100/90)*100
+                @porcion=((@azucares*@gramos_porciones)/@peso)
+                @ir_porcion=(@porcion/90)*100
+                "| #{@azucares} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+        end
+
 
 
 	# Funciones para las proteinas
