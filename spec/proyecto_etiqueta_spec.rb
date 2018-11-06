@@ -141,7 +141,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.proteinas).to eq(40)
                 end
 		it "La fila de las proteinas es correcta" do
-			expect(@eti1.get_proteinas).to eq("| 30.0 | 3.0 | 6% | 6.0 | 12% |")
+			expect(@eti1.get_proteinas).to eq("| 30.0 | 3.0 | 6.0% | 6.0 | 12.0% |")
                 end
 
         end

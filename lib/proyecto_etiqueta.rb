@@ -95,6 +95,14 @@ class Etiqueta
         def asignar_proteinas(proteinas)
                 @proteinas=proteinas
         end
+	def get_proteinas
+                @_100=((@proteinas*100)/@peso)
+                @ir_100=(@_100/50)*100
+                @porcion=((@proteinas*@gramos_porciones)/@peso)
+                @ir_porcion=(@porcion/50)*100
+                "| #{@proteinas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+        end
+
 
 
 	# Funciones para la sal
