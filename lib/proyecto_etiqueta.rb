@@ -6,10 +6,13 @@
 #end
 
 class Etiqueta
-        attr_reader :nombre, :valor, :grasas, :saturadas, :hidratos, :azucares, :proteinas, :sal, :porciones, :gramos_porciones, :peso
+        attr_reader :nombre, :valorKj, :valorKcal, :grasas, :saturadas, :hidratos, :azucares, :proteinas, :sal, :porciones, :gramos_porciones, :peso
 
-	def initialize(nombre,valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso)
-                @nombre, @valor, @grasas, @saturadas, @hidratos, @azucares, @proteinas, @sal,@porciones,@gramos_porciones,@peso = nombre,valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso
+	def initialize(nombre,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso)
+                @nombre, @grasas, @saturadas, @hidratos, @azucares, @proteinas, @sal,@porciones,@gramos_porciones,@peso = nombre,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso
+		@valorKj=(@grasas*37)+(@saturadas*37)+(@hidratos*17)+(@azucares*10)+(@proteinas*17)+(@sal*25)
+		@valorKcal=(@grasas*9)+(@saturadas*9)+(@hidratos*4)+(@azucares*2.4)+(@proteinas*4)+(@sal*6)
+
         end
 
 	# Funciones para el nombre de la etiqueta
@@ -17,11 +20,11 @@ class Etiqueta
                 @nombre=(nombre)
         end
 	def get_grasas
-                @grasa_100=((@grasas*100)/@peso)
-                @ir_100_grasa=(@grasa_100/70)*100
-                @grasa_porcion=((@grasas*@gramos_porciones)/@peso)
-                @ir_porcion_grasa=(@grasa_porcion/70)*100
-                "| #{@grasas} | #{@grasa_100} | #{@ir_100_grasa.round(1)}% | #{@grasa_porcion} | #{@ir_porcion_grasa.round(1)} |"
+                @_100=((@grasas*100)/@peso)
+                @ir_100=(@_100/70)*100
+                @porcion=((@grasas*@gramos_porciones)/@peso)
+                @ir_porcion=(@porcion/70)*100
+                "| #{@grasas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)} |"
         end
 
 
@@ -30,9 +33,7 @@ class Etiqueta
 
 
 	# Funciones para el valor energetico
-        def asignar_valor(valor)
-                @valor=valor
-        end
+
 
 
 	# Funciones para el valor de grasas
