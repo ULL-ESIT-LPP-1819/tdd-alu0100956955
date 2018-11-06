@@ -12,7 +12,7 @@ RSpec.describe ProyectoEtiqueta do
 # Nombre, Valor, Grasas, Grasa saturadas, Hidratos, Azucares, Proteinas, Sal.
 # Cantidad de prociones , Cantidad en gramos de una porcion)	
 	before :each do
-		@eti1 = Etiqueta.new("carne",20.0,10.0,30.0,5,30,2,5,200,1000)
+		@eti1 = Etiqueta.new("carne",20.0,10.0,30.0,5.0,30,2,5,200,1000)
 	end
 
 	describe "# almacenamos los nutrientes" do
@@ -60,6 +60,7 @@ RSpec.describe ProyectoEtiqueta do
 
 	end
 
+
 	# Pruebas para los nombres
 	describe "# Comprobamos que podemos asignar y ver el nombre de la etiqueta" do
                 it "El nombre de la etiqueta es correcto" do
@@ -67,6 +68,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.nombre).to eq("pescado")
                 end
         end
+
 
 	# Pruebas para el valor nutricional
 	describe "# Comprobamos que podemos asignar y ver el valor nutricional" do
@@ -80,6 +82,7 @@ RSpec.describe ProyectoEtiqueta do
 		end
         end
 
+
 	# Pruebas para las grasas
 	describe "# Comprobamos que podemos asignar y ver las grasas" do
                 it "Las grasas almacenadas son correctas" do
@@ -91,6 +94,7 @@ RSpec.describe ProyectoEtiqueta do
 		end
         end
 
+
 	# Pruebas para las grasas saturadas
 	describe "# Comprobamos que podemos asignar y ver las grasas Saturadas" do
                 it "Las grasas Saturadas almacenadas son correctas" do
@@ -101,9 +105,8 @@ RSpec.describe ProyectoEtiqueta do
 			expect(@eti1.get_saturadas).to eq("| 10.0 | 1.0 | 5.0% | 2.0 | 10.0% |")
                 end
 
-
-
         end
+
 
 	# Pruebas para los hidratos
 	describe "# Comprobamos que podemos asignar y ver los hidratos" do
@@ -115,8 +118,8 @@ RSpec.describe ProyectoEtiqueta do
 			expect(@eti1.get_hidratos).to eq("| 30.0 | 3.0 | 1.2% | 6.0 | 2.3% |")
                 end
 
-
         end
+
 
 	# Pruebas para los azucares
 	describe "# Comprobamos que podemos asignar y ver los Azucares" do
@@ -124,7 +127,12 @@ RSpec.describe ProyectoEtiqueta do
                         @eti1.asignar_azucares(10)
                         expect(@eti1.azucares).to eq(10)
                 end
+		it "La fila de los azucares es correcta" do
+			expect(@eti1.get_azucares).to eq("| 5.0 | 0.5 | 1% | 1.0 | 1.1% |")
+                end
+
         end
+
 
 	# Prueba para las proteinas
 	describe "# Comprobamos que podemos asignar y ver las proteinas" do
@@ -133,6 +141,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.proteinas).to eq(40)
                 end
         end
+
 
 	# Pruebas para la sal
 	describe "# Comprobamos que podemos asignar y ver la sal" do
