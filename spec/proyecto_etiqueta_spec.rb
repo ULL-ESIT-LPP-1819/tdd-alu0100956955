@@ -12,7 +12,7 @@ RSpec.describe ProyectoEtiqueta do
 # Nombre, Valor, Grasas, Grasa saturadas, Hidratos, Azucares, Proteinas, Sal.
 # Cantidad de prociones , Cantidad en gramos de una porcion)	
 	before :each do
-		@eti1 = Etiqueta.new("carne",20.0,10,30,5,30,2,5,200,1000)
+		@eti1 = Etiqueta.new("carne",20.0,10.0,30,5,30,2,5,200,1000)
 	end
 
 	describe "# almacenamos los nutrientes" do
@@ -87,7 +87,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.grasas).to eq(30)
                 end
 		it "La fila de grasas es correcta" do
-			expect(@eti1.get_grasas).to eq("| 20.0 | 2.0 | 2.9% | 4.0 | 5.7 |")
+			expect(@eti1.get_grasas).to eq("| 20.0 | 2.0 | 2.9% | 4.0 | 5.7% |")
 		end
         end
 
@@ -97,6 +97,10 @@ RSpec.describe ProyectoEtiqueta do
                         @eti1.asignar_saturadas(20)
                         expect(@eti1.saturadas).to eq(20)
                 end
+		it "La fila de grasas saturadas es correcta" do
+			expect(@eti1.get_saturadas).to eq("| 10.0 | 1.0 | 5.0% | 2.0 | 10.0% |")
+                end
+
 
 
         end

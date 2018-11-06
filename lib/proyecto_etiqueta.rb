@@ -19,16 +19,6 @@ class Etiqueta
         def asignar_nombre(nombre)
                 @nombre=(nombre)
         end
-	def get_grasas
-                @_100=((@grasas*100)/@peso)
-                @ir_100=(@_100/70)*100
-                @porcion=((@grasas*@gramos_porciones)/@peso)
-                @ir_porcion=(@porcion/70)*100
-                "| #{@grasas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)} |"
-        end
-
-
-
 
 
 
@@ -46,12 +36,22 @@ class Etiqueta
 	def asignar_grasas(grasas)
 		@grasas=grasas
 	end
+	def get_grasas
+                @_100=((@grasas*100)/@peso)
+                @ir_100=(@_100/70)*100
+                @porcion=((@grasas*@gramos_porciones)/@peso)
+                @ir_porcion=(@porcion/70)*100
+                "| #{@grasas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+        end
+
 
 
 	# Funciones para las grasas saturadas
         def asignar_saturadas(saturadas)
                 @saturadas=saturadas
         end
+
+
 	
 
 	# Funciones para los hidratos de carbono
