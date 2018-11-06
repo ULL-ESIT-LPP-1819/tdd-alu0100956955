@@ -42,6 +42,12 @@ class Etiqueta
         end
 
 
+	# Funciones para los azucares
+        def asignar_azucares(azucares)
+                @azucares=azucares
+        end
+
+
 
 
 
