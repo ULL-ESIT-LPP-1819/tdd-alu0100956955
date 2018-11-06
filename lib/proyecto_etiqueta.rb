@@ -6,16 +6,27 @@
 #end
 
 class Etiqueta
-        attr_reader :nombre, :valor, :grasas, :saturadas, :hidratos, :azucares, :proteinas, :sal, :porciones, :gramos_porciones
+        attr_reader :nombre, :valor, :grasas, :saturadas, :hidratos, :azucares, :proteinas, :sal, :porciones, :gramos_porciones, :peso
 
-        def initialize(nombre,valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,gramos_porciones)
-                @nombre, @valor, @grasas, @saturadas, @hidratos, @azucares, @proteinas, @sal,@porciones,@gramos_porciones = nombre,valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,gramos_porciones
+	def initialize(nombre,valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso)
+                @nombre, @valor, @grasas, @saturadas, @hidratos, @azucares, @proteinas, @sal,@porciones,@gramos_porciones,@peso = nombre,valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso
         end
 
 	# Funciones para el nombre de la etiqueta
         def asignar_nombre(nombre)
                 @nombre=(nombre)
         end
+	def get_grasas
+                @grasa_100=((@grasas*100)/@peso)
+                @ir_100_grasa=(@grasa_100/70)*100
+                @grasa_porcion=((@grasas*@gramos_porciones)/@peso)
+                @ir_porcion_grasa=(@grasa_porcion/70)*100
+                "| #{@grasas} | #{@grasa_100} | #{@ir_100_grasa.round(1)}% | #{@grasa_porcion} | #{@ir_porcion_grasa.round(1)} |"
+        end
+
+
+
+
 
 
 	# Funciones para el valor energetico
@@ -58,7 +69,6 @@ class Etiqueta
         def asignar_sal(sal)
                 @sal=sal
         end
-
 
 
 
