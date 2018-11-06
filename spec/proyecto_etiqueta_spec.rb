@@ -83,6 +83,12 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.azucares).to eq(10)
                 end
         end
+	describe "# Comprobamos que podemos asignar y ver las proteinas" do
+                it "Las proteinas son correctas" do
+                        @eti1.asignar_proteinas(40)
+                        expect(@eti1.proteinas).to eq(40)
+                end
+        end
 
 
 
