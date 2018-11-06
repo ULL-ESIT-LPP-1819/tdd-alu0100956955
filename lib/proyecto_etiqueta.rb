@@ -18,6 +18,13 @@ class Etiqueta
         end
 
 
+	# Funciones para el valor energetico
+        def asignar_valor(valor)
+                @valor=valor
+        end
+
+
+
 
 
 	
