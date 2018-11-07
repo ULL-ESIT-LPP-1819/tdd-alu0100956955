@@ -1,4 +1,4 @@
-require 'proyecto_etiqueta.rb'
+require 'proyecto_etiqueta/etiqueta.rb'
 
 RSpec.describe ProyectoEtiqueta do
 #  it "has a version number" do
@@ -92,6 +92,12 @@ RSpec.describe ProyectoEtiqueta do
 		it "La fila de grasas es correcta" do
 			expect(@eti1.get_grasas).to eq("| 20.0 | 2.0 | 2.9% | 4.0 | 5.7% |")
 		end
+		#it "Las grasas superan la cantidad determinada " do
+		#	expect(@eti1.grasas).to high(70)
+		#end
+		#it "las grasas estan por debajo de la cantidad determinada" do
+		#	expect(@eti1.grasas).to low(70)
+		#end
         end
 
 

@@ -1,5 +1,6 @@
 require "bundler/setup"
-require "proyecto_etiqueta"
+#require "proyecto_etiqueta"
+require "proyecto_etiqueta/etiqueta.rb"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
