@@ -182,6 +182,48 @@ RSpec.describe ProyectoEtiqueta do
         end
 
 
+	# Prueba para los polialcoholes
+        describe "# Comprobamos que podemos asignar y ver los polialcoholes" do
+                it "Los polialcoholes son correctas" do
+                        @eti1.asignar_alco(42)
+                        expect(@eti1.alco).to eq(42)
+                end
+                it "La fila de los polialcoholes es correcta" do
+                        expect(@eti1.get_alco).to eq([30.0, 3.0, 6.0, 6.0, 12.0])
+                end
+
+        end
+
+
+	# Prueba para el almidon
+        describe "# Comprobamos que podemos asignar y ver el almidon" do
+                it "El almidon es correcto" do
+                        @eti1.asignar_almidon(46)
+                        expect(@eti1.almidon).to eq(46)
+                end
+                it "La fila del almidon es correcto" do
+                        expect(@eti1.get_almidon).to eq([30.0, 3.0, 6.0, 6.0, 12.0])
+                end
+
+        end
+
+
+	# Pruebas para la fibra
+        describe "# Comprobamos que podemos asignar y ver la fibra" do
+                it "La fibra es correcta" do
+                        @eti1.asignar_fibra(43)
+                        expect(@eti1.fibra).to eq(43)
+                end
+                it "La fila de la fibra es correcta" do
+                        expect(@eti1.get_fibra).to eq([30.0, 3.0, 6.0, 6.0, 12.0])
+                end
+
+        end
+
+
+
+
+
 	# Pruebas para la sal
 	describe "# Comprobamos que podemos asignar y ver la sal" do
                 it "La sal es correcta" do
