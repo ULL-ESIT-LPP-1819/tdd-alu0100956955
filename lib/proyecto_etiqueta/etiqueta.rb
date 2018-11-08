@@ -2,10 +2,10 @@
 #
 
 class Etiqueta
-        attr_reader :nombre, :valorKj, :valorKcal, :grasas, :saturadas, :monoin, :poli, :hidratos, :azucares, :proteinas, :sal, :porciones, :gramos_porciones, :peso
+        attr_reader :nombre, :valorKj, :valorKcal, :grasas, :saturadas, :monoin, :poli, :hidratos, :azucares, :alco, :almidon, :fibra, :proteinas, :sal, :porciones, :gramos_porciones, :peso
 
-        def initialize(nombre,saturadas,monoin,poli,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso)
-                @nombre,  @saturadas, @monoin, @poli, @hidratos, @azucares, @proteinas, @sal,@porciones,@gramos_porciones,@peso = nombre,saturadas,monoin,poli,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso
+        def initialize(nombre,saturadas,monoin,poli,hidratos,azucares,alco,almidon,fibra,proteinas,sal,porciones,gramos_porciones,peso)
+                @nombre,  @saturadas, @monoin, @poli, @hidratos, @azucares, @alco, @almidon, @fibra, @proteinas, @sal,@porciones,@gramos_porciones,@peso = nombre,saturadas,monoin,poli,hidratos,azucares,alco,almidon,fibra,proteinas,sal,porciones,gramos_porciones,peso
 
 
 		@grasas=(@saturadas+@monoin+@poli)
@@ -116,6 +116,46 @@ class Etiqueta
 		#p"| #{@azucares} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
                 [ @azucares , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
         end
+
+
+	# Funciones para los polialcoholes
+        def asignar_alco(alco)
+                @alco=alco
+        end
+        def get_alco
+                @_100=((@alco*100)/@peso)
+                #@ir_100=(@_100/90)*100
+                @porcion=((@alco*@gramos_porciones)/@peso)
+                #@ir_porcion=(@porcion/90)*100
+                [ @alco , @_100 , 0 , @porcion , 0 ]
+        end
+
+
+	# Funciones para el almidon
+        def asignar_almidon(almidon)
+                @almidon=almidon
+        end
+        def get_almidon
+                @_100=((@almidon*100)/@peso)
+                #@ir_100=(@_100/90)*100
+                @porcion=((@almidon*@gramos_porciones)/@peso)
+                #@ir_porcion=(@porcion/90)*100
+                [ @almidon , @_100 , 0 , @porcion , 0 ]
+        end
+
+
+	# Funciones para la fibra
+        def asignar_fibra(fibra)
+                @fibra=fibra
+        end
+        def get_fibra
+                @_100=((@fibra*100)/@peso)
+                #@ir_100=(@_100/90)*100
+                @porcion=((@fibra*@gramos_porciones)/@peso)
+                #@ir_porcion=(@porcion/90)*100
+                [ @fibra , @_100 , 0 , @porcion , 0 ]
+        end
+
 
 
 

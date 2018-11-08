@@ -12,7 +12,7 @@ RSpec.describe ProyectoEtiqueta do
 # Nombre, Grasas,saturadas,monoin,poliin, Hidratos, Azucares, Proteinas, Sal.
 # Cantidad de prociones , Cantidad en gramos de una porcion, peso del producto
 	before :each do
-		@eti1 = Etiqueta.new("carne",10.0,15.0,25.0,30.0,5.0,30.0,2.0,5,200,1000)
+		@eti1 = Etiqueta.new("carne",10.0,15.0,25.0,30.0,5.0,20.0,17.0,15.0,30.0,2.0,5,200,1000)
 	end
 
 	describe "# almacenamos los nutrientes" do
@@ -96,13 +96,6 @@ RSpec.describe ProyectoEtiqueta do
 		it "La fila de grasas es correcta" do
 			expect(@eti1.get_grasas).to eq([50.0, 5.0, 7.1, 10.0, 14.3])
 		end
-		#it "Las grasas superan la cantidad determinada " do
-		#	expect(@eti1.grasas).to high(70)
-		#end
-		#it "las grasas estan por debajo de la cantidad determinada" do
-		#	expect(@eti1.grasas).to low(70)
-		#end
-        
 
 
 		# Pruebas para las grasas saturadas
@@ -116,7 +109,8 @@ RSpec.describe ProyectoEtiqueta do
                 	end
 
         	end
-
+		
+		# Pruebas para las grasas monoinsaturadas
 		describe "# Comprobamos que podemos asignar y ver las grasas monoinsaturadas" do
                         it "Las grasas monoinsaturadas almacenadas son correctas" do
                                 @eti1.asignar_monoin(16)
@@ -128,6 +122,7 @@ RSpec.describe ProyectoEtiqueta do
 
                 end
 
+		# Pruebas para las grasas poliinsaturadas
 		describe "# Comprobamos que podemos asignar y ver las grasas poliinsaturadas" do
                         it "Las grasas poliinsaturadas almacenadas son correctas" do
                                 @eti1.asignar_poli(40)
@@ -169,18 +164,6 @@ RSpec.describe ProyectoEtiqueta do
         end
 
 
-	# Prueba para las proteinas
-	describe "# Comprobamos que podemos asignar y ver las proteinas" do
-                it "Las proteinas son correctas" do
-                        @eti1.asignar_proteinas(40)
-                        expect(@eti1.proteinas).to eq(40)
-                end
-		it "La fila de las proteinas es correcta" do
-			expect(@eti1.get_proteinas).to eq([30.0, 3.0, 6.0, 6.0, 12.0])
-                end
-
-        end
-
 
 	# Prueba para los polialcoholes
         describe "# Comprobamos que podemos asignar y ver los polialcoholes" do
@@ -189,7 +172,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.alco).to eq(42)
                 end
                 it "La fila de los polialcoholes es correcta" do
-                        expect(@eti1.get_alco).to eq([30.0, 3.0, 6.0, 6.0, 12.0])
+                        expect(@eti1.get_alco).to eq([20.0, 2.0, 0, 4.0, 0])
                 end
 
         end
@@ -202,7 +185,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.almidon).to eq(46)
                 end
                 it "La fila del almidon es correcto" do
-                        expect(@eti1.get_almidon).to eq([30.0, 3.0, 6.0, 6.0, 12.0])
+			expect(@eti1.get_almidon).to eq([17.0, 1.7, 0, 3.4, 0])
                 end
 
         end
@@ -215,11 +198,23 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.fibra).to eq(43)
                 end
                 it "La fila de la fibra es correcta" do
-                        expect(@eti1.get_fibra).to eq([30.0, 3.0, 6.0, 6.0, 12.0])
+			expect(@eti1.get_fibra).to eq([15.0, 1.5, 0, 3.0, 0])
                 end
 
         end
 
+	
+	# Prueba para las proteinas
+        describe "# Comprobamos que podemos asignar y ver las proteinas" do
+                it "Las proteinas son correctas" do
+                        @eti1.asignar_proteinas(40)
+                        expect(@eti1.proteinas).to eq(40)
+                end
+                it "La fila de las proteinas es correcta" do
+                        expect(@eti1.get_proteinas).to eq([30.0, 3.0, 6.0, 6.0, 12.0])
+                end
+
+        end
 
 
 
