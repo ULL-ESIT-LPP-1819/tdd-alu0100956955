@@ -9,10 +9,10 @@ RSpec.describe ProyectoEtiqueta do
 #    expect(false).to eq(true)
 #  end
 
-# Nombre, Grasas,saturadas,monoin,poliin Hidratos, Azucares, Proteinas, Sal.
+# Nombre, Grasas,saturadas,monoin,poliin, Hidratos, Azucares, Proteinas, Sal.
 # Cantidad de prociones , Cantidad en gramos de una porcion, peso del producto
 	before :each do
-		@eti1 = Etiqueta.new("carne",20.0,10.0,15.0,30.0,5.0,30.0,2.0,5,200,1000)
+		@eti1 = Etiqueta.new("carne",20.0,10.0,15.0,25.0,30.0,5.0,30.0,2.0,5,200,1000)
 	end
 
 	describe "# almacenamos los nutrientes" do
@@ -119,14 +119,26 @@ RSpec.describe ProyectoEtiqueta do
 
 		describe "# Comprobamos que podemos asignar y ver las grasas monoinsaturadas" do
                         it "Las grasas monoinsaturadas almacenadas son correctas" do
-                                @eti1.asignar_monoin(15)
-                                expect(@eti1.monoin).to eq(15)
+                                @eti1.asignar_monoin(16)
+                                expect(@eti1.monoin).to eq(16)
                         end
                         it "La fila de grasas monoinsaturadas es correcta" do
 				expect(@eti1.get_monoin).to eq([15.0, 1.5, 6.0, 3.0, 12.0])
                         end
 
                 end
+
+		describe "# Comprobamos que podemos asignar y ver las grasas poliinsaturadas" do
+                        it "Las grasas poliinsaturadas almacenadas son correctas" do
+                                @eti1.asignar_poli(40)
+                                expect(@eti1.poli).to eq(40)
+                        end
+                        it "La fila de grasas poliinsaturadas es correcta" do
+                                expect(@eti1.get_poli).to eq([25.0, 2.5, 10.0, 5.0, 20.0])
+                        end
+
+                end
+
 
 	end	
 

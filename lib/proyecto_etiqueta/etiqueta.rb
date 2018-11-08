@@ -2,10 +2,10 @@
 #
 
 class Etiqueta
-        attr_reader :nombre, :valorKj, :valorKcal, :grasas, :saturadas, :monoin, :hidratos, :azucares, :proteinas, :sal, :porciones, :gramos_porciones, :peso
+        attr_reader :nombre, :valorKj, :valorKcal, :grasas, :saturadas, :monoin, :poli, :hidratos, :azucares, :proteinas, :sal, :porciones, :gramos_porciones, :peso
 
-        def initialize(nombre,grasas,saturadas,monoin,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso)
-                @nombre, @grasas, @saturadas, @monoin, @hidratos, @azucares, @proteinas, @sal,@porciones,@gramos_porciones,@peso = nombre,grasas,saturadas,monoin,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso
+        def initialize(nombre,grasas,saturadas,monoin,poli,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso)
+                @nombre, @grasas, @saturadas, @monoin, @poli, @hidratos, @azucares, @proteinas, @sal,@porciones,@gramos_porciones,@peso = nombre,grasas,saturadas,monoin,poli,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso
                 @valorKj=(@grasas*37)+(@saturadas*37)+(@hidratos*17)+(@azucares*10)+(@proteinas*17)+(@sal*25)
                 @valorKcal=(@grasas*9)+(@saturadas*9)+(@hidratos*4)+(@azucares*2.4)+(@proteinas*4)+(@sal*6)
 
