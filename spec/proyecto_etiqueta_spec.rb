@@ -90,7 +90,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.grasas).to eq(30)
                 end
 		it "La fila de grasas es correcta" do
-			expect(@eti1.get_grasas).to eq("| 20.0 | 2.0 | 2.9% | 4.0 | 5.7% |")
+			expect(@eti1.get_grasas).to eq([20.0, 2.0, 2.9, 4.0, 5.7])
 		end
 		#it "Las grasas superan la cantidad determinada " do
 		#	expect(@eti1.grasas).to high(70)
@@ -108,7 +108,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.saturadas).to eq(20)
                 end
 		it "La fila de grasas saturadas es correcta" do
-			expect(@eti1.get_saturadas).to eq("| 10.0 | 1.0 | 5.0% | 2.0 | 10.0% |")
+			expect(@eti1.get_saturadas).to eq([10.0, 1.0, 5.0, 2.0, 10.0])
                 end
 
         end
@@ -121,7 +121,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.hidratos).to eq(40)
                 end
 		it "La fila de los hidratos es correcta" do
-			expect(@eti1.get_hidratos).to eq("| 30.0 | 3.0 | 1.2% | 6.0 | 2.3% |")
+			expect(@eti1.get_hidratos).to eq([30.0, 3.0, 1.2, 6.0, 2.3])
                 end
 
         end
@@ -134,7 +134,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.azucares).to eq(10)
                 end
 		it "La fila de los azucares es correcta" do
-			expect(@eti1.get_azucares).to eq("| 5.0 | 0.5 | 0.6% | 1.0 | 1.1% |")
+			expect(@eti1.get_azucares).to eq([5.0, 0.5, 0.6, 1.0, 1.1])
                 end
 
         end
@@ -147,7 +147,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.proteinas).to eq(40)
                 end
 		it "La fila de las proteinas es correcta" do
-			expect(@eti1.get_proteinas).to eq("| 30.0 | 3.0 | 6.0% | 6.0 | 12.0% |")
+			expect(@eti1.get_proteinas).to eq([30.0, 3.0, 6.0, 6.0, 12.0])
                 end
 
         end
@@ -160,12 +160,18 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.sal).to eq(3)
                 end
 		it "La fila de la sal es correcta" do
-			expect(@eti1.get_sal).to eq("| 2.0 | 0.2 | 3.3% | 0.4 | 6.7% |")
+			expect(@eti1.get_sal).to eq([2.0, 0.2, 3.3, 0.4, 6.7])
                 end
 
         end
 
 
+	# Metodo to_s
+	describe "# Prueba del metodo to_s" do
+		it "La etiqueta se muestra de forma correcta" do
+			expect(@eti1.to_s).to eq("[20.0, 2.0, 2.9, 4.0, 5.7]\n[10.0, 1.0, 5.0, 2.0, 10.0]\n[30.0, 3.0, 1.2, 6.0, 2.3]\n[5.0, 0.5, 0.6, 1.0, 1.1]\n[30.0, 3.0, 6.0, 6.0, 12.0]\n[2.0, 0.2, 3.3, 0.4, 6.7]")
+		end
+	end
 
 
 

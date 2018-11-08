@@ -37,8 +37,8 @@ class Etiqueta
                 @ir_100=(@_100/70)*100
                 @porcion=((@grasas*@gramos_porciones)/@peso)
                 @ir_porcion=(@porcion/70)*100
-		p "| #{@grasas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
-                #"| #{@grasas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+		#p "| #{@grasas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+                [ @grasas , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
         end
 
 
@@ -52,8 +52,8 @@ class Etiqueta
                 @ir_100=(@_100/20)*100
                 @porcion=((@saturadas*@gramos_porciones)/@peso)
                 @ir_porcion=(@porcion/20)*100
-		p "| #{@saturadas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
-                #"| #{@saturadas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+		#p "| #{@saturadas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+                [ @saturadas , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
         end
 
 
@@ -69,8 +69,8 @@ class Etiqueta
                 @ir_100=(@_100/260)*100
                 @porcion=((@hidratos*@gramos_porciones)/@peso)
                 @ir_porcion=(@porcion/260)*100
-		p "| #{@hidratos} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
-                #"| #{@hidratos} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+		#p "| #{@hidratos} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+                [ @hidratos , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
         end
 
 
@@ -85,8 +85,8 @@ class Etiqueta
                 @ir_100=(@_100/90)*100
                 @porcion=((@azucares*@gramos_porciones)/@peso)
                 @ir_porcion=(@porcion/90)*100
-		p "| #{@azucares} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
-                #"| #{@azucares} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+		#p"| #{@azucares} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+                [ @azucares , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
         end
 
 
@@ -100,8 +100,8 @@ class Etiqueta
                 @ir_100=(@_100/50)*100
                 @porcion=((@proteinas*@gramos_porciones)/@peso)
                 @ir_porcion=(@porcion/50)*100
-		p"| #{@proteinas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
-                #"| #{@proteinas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+		#p"| #{@proteinas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+                [ @proteinas , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
         end
 
 
@@ -115,24 +115,15 @@ class Etiqueta
                 @ir_100=(@_100/6)*100
                 @porcion=((@sal*@gramos_porciones)/@peso)
                 @ir_porcion=(@porcion/6)*100
-		p "| #{@sal} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
-                #"| #{@sal} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+		#p "| #{@sal} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
+                [ @sal , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
         end
 
 
 
-
 	# Funcion para mostrar la tabla
-	def to_s()
-		puts " ------------------------------------------"
-		puts " |  C  | 100g | IR | prcn | IR prcn |"
-		get_grasas
-		get_saturadas
-		get_hidratos
-		get_azucares
-		get_proteinas
-		get_sal
-	end
+        def to_s()
+        end
 
 
 
@@ -140,8 +131,9 @@ class Etiqueta
 end
 
 
-e = Etiqueta.new("carne",65.0,23.0,5.0,30.0,260.0,1.0,5,200,1000)
-e.to_s
+#e = Etiqueta.new("carne",65.0,23.0,5.0,30.0,260.0,1.0,5,200,1000)
+#puts("[ g , 100g , IR% , prcn , IR prcn]")
+#puts(e.to_s())
 
 
 
