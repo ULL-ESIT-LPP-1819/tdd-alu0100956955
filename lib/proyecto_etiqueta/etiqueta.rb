@@ -4,10 +4,13 @@
 class Etiqueta
         attr_reader :nombre, :valorKj, :valorKcal, :grasas, :saturadas, :monoin, :poli, :hidratos, :azucares, :proteinas, :sal, :porciones, :gramos_porciones, :peso
 
-        def initialize(nombre,grasas,saturadas,monoin,poli,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso)
-                @nombre, @grasas, @saturadas, @monoin, @poli, @hidratos, @azucares, @proteinas, @sal,@porciones,@gramos_porciones,@peso = nombre,grasas,saturadas,monoin,poli,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso
-                @valorKj=(@grasas*37)+(@saturadas*37)+(@hidratos*17)+(@azucares*10)+(@proteinas*17)+(@sal*25)
-                @valorKcal=(@grasas*9)+(@saturadas*9)+(@hidratos*4)+(@azucares*2.4)+(@proteinas*4)+(@sal*6)
+        def initialize(nombre,saturadas,monoin,poli,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso)
+                @nombre,  @saturadas, @monoin, @poli, @hidratos, @azucares, @proteinas, @sal,@porciones,@gramos_porciones,@peso = nombre,saturadas,monoin,poli,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso
+
+
+		@grasas=(@saturadas+@monoin+@poli)
+                @valorKj=(@monoin*37)+(@saturadas*37)+(@poli*37)+(@hidratos*17)+(@azucares*10)+(@proteinas*17)+(@sal*25)
+                @valorKcal=(@monoin*9)+(@saturadas*9)+(@poli*9)+(@hidratos*4)+(@azucares*2.4)+(@proteinas*4)+(@sal*6)
 
         end
 
@@ -37,7 +40,6 @@ class Etiqueta
                 @ir_100=(@_100/70)*100
                 @porcion=((@grasas*@gramos_porciones)/@peso)
                 @ir_porcion=(@porcion/70)*100
-		#p "| #{@grasas} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
                 [ @grasas , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
         end
 
@@ -149,7 +151,7 @@ class Etiqueta
 	
 	# Funcion para mostrar la tabla
         def to_s()
-                "#{get_grasas()}\n#{get_saturadas()}\n#{get_hidratos()}\n#{get_azucares()}\n#{get_proteinas()}\n#{get_sal()}"
+                "#{get_grasas()}\n#{get_saturadas()}\n#{get_monoin()}\n#{get_poli()}\n#{get_hidratos()}\n#{get_azucares()}\n#{get_proteinas()}\n#{get_sal()}"
         end
 
 

@@ -12,7 +12,7 @@ RSpec.describe ProyectoEtiqueta do
 # Nombre, Grasas,saturadas,monoin,poliin, Hidratos, Azucares, Proteinas, Sal.
 # Cantidad de prociones , Cantidad en gramos de una porcion, peso del producto
 	before :each do
-		@eti1 = Etiqueta.new("carne",20.0,10.0,15.0,25.0,30.0,5.0,30.0,2.0,5,200,1000)
+		@eti1 = Etiqueta.new("carne",10.0,15.0,25.0,30.0,5.0,30.0,2.0,5,200,1000)
 	end
 
 	describe "# almacenamos los nutrientes" do
@@ -20,14 +20,14 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.nombre).to eq("carne")
                 end
 		it "El valor energetico en Kj calculado es correcto"do
-                        expect(@eti1.valorKj).to eq(2230)
+                        expect(@eti1.valorKj).to eq(2970)
                 end
 		it "El valor energetico en Kcal calculado es correcto" do
-			expect(@eti1.valorKcal).to eq(534)
+			expect(@eti1.valorKcal).to eq(714)
 		end
 
                 it "Las grasas se inicializaron de forma correcta" do
-                        expect(@eti1.grasas).to eq(20)
+                        expect(@eti1.grasas).to eq(50)
                 end
 
                 it "Las grasas saturadas se inicializaron de forma correcta" do
@@ -94,7 +94,7 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.grasas).to eq(30)
                 end
 		it "La fila de grasas es correcta" do
-			expect(@eti1.get_grasas).to eq([20.0, 2.0, 2.9, 4.0, 5.7])
+			expect(@eti1.get_grasas).to eq([50.0, 5.0, 7.1, 10.0, 14.3])
 		end
 		#it "Las grasas superan la cantidad determinada " do
 		#	expect(@eti1.grasas).to high(70)
@@ -198,7 +198,7 @@ RSpec.describe ProyectoEtiqueta do
 	# Metodo to_s
 	describe "# Prueba del metodo to_s" do
 		it "La etiqueta se muestra de forma correcta" do
-			expect(@eti1.to_s).to eq("[20.0, 2.0, 2.9, 4.0, 5.7]\n[10.0, 1.0, 5.0, 2.0, 10.0]\n[30.0, 3.0, 1.2, 6.0, 2.3]\n[5.0, 0.5, 0.6, 1.0, 1.1]\n[30.0, 3.0, 6.0, 6.0, 12.0]\n[2.0, 0.2, 3.3, 0.4, 6.7]")
+			expect(@eti1.to_s).to eq("[50.0, 5.0, 7.1, 10.0, 14.3]\n[10.0, 1.0, 5.0, 2.0, 10.0]\n[15.0, 1.5, 6.0, 3.0, 12.0]\n[25.0, 2.5, 10.0, 5.0, 20.0]\n[30.0, 3.0, 1.2, 6.0, 2.3]\n[5.0, 0.5, 0.6, 1.0, 1.1]\n[30.0, 3.0, 6.0, 6.0, 12.0]\n[2.0, 0.2, 3.3, 0.4, 6.7]")
 		end
 	end
 
