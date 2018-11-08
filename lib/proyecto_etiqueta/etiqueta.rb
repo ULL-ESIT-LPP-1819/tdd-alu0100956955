@@ -9,8 +9,8 @@ class Etiqueta
 
 
 		@grasas=(@saturadas+@monoin+@poli)
-                @valorKj=(@monoin*37)+(@saturadas*37)+(@poli*37)+(@hidratos*17)+(@azucares*10)+(@proteinas*17)+(@sal*25)
-                @valorKcal=(@monoin*9)+(@saturadas*9)+(@poli*9)+(@hidratos*4)+(@azucares*2.4)+(@proteinas*4)+(@sal*6)
+                @valorKj=(@monoin*37)+(@saturadas*37)+(@poli*37)+(@hidratos*17)+(@azucares*10)+(@alco*10)+(@almidon*17)+(@fibra*8)+(@proteinas*17)+(@sal*25)
+		@valorKcal=(@monoin*9)+(@saturadas*9)+(@poli*9)+(@hidratos*4)+(@azucares*2.4)+(@alco*2.4)+(@almidon*4)+(@fibra*2)+(@proteinas*4)+(@sal*6)
 
         end
 
@@ -97,7 +97,6 @@ class Etiqueta
                 @ir_100=(@_100/260)*100
                 @porcion=((@hidratos*@gramos_porciones)/@peso)
                 @ir_porcion=(@porcion/260)*100
-		#p "| #{@hidratos} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
                 [ @hidratos , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
         end
 
@@ -113,7 +112,6 @@ class Etiqueta
                 @ir_100=(@_100/90)*100
                 @porcion=((@azucares*@gramos_porciones)/@peso)
                 @ir_porcion=(@porcion/90)*100
-		#p"| #{@azucares} | #{@_100} | #{@ir_100.round(1)}% | #{@porcion} | #{@ir_porcion.round(1)}% |"
                 [ @azucares , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
         end
 
@@ -191,7 +189,7 @@ class Etiqueta
 	
 	# Funcion para mostrar la tabla
         def to_s()
-                "#{get_grasas()}\n#{get_saturadas()}\n#{get_monoin()}\n#{get_poli()}\n#{get_hidratos()}\n#{get_azucares()}\n#{get_proteinas()}\n#{get_sal()}"
+                "#{get_grasas()}\n#{get_saturadas()}\n#{get_monoin()}\n#{get_poli()}\n#{get_hidratos()}\n#{get_azucares()}\n#{get_alco()}\n#{get_almidon()}\n#{get_fibra()}\n#{get_proteinas()}\n#{get_sal()}"
         end
 
 

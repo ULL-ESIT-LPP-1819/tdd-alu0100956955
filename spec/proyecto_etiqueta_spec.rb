@@ -20,10 +20,10 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@eti1.nombre).to eq("carne")
                 end
 		it "El valor energetico en Kj calculado es correcto"do
-                        expect(@eti1.valorKj).to eq(2970)
+                        expect(@eti1.valorKj).to eq(3579)
                 end
 		it "El valor energetico en Kcal calculado es correcto" do
-			expect(@eti1.valorKcal).to eq(714)
+			expect(@eti1.valorKcal).to eq(860)
 		end
 
                 it "Las grasas se inicializaron de forma correcta" do
@@ -235,7 +235,7 @@ RSpec.describe ProyectoEtiqueta do
 	# Metodo to_s
 	describe "# Prueba del metodo to_s" do
 		it "La etiqueta se muestra de forma correcta" do
-			expect(@eti1.to_s).to eq("[50.0, 5.0, 7.1, 10.0, 14.3]\n[10.0, 1.0, 5.0, 2.0, 10.0]\n[15.0, 1.5, 6.0, 3.0, 12.0]\n[25.0, 2.5, 10.0, 5.0, 20.0]\n[30.0, 3.0, 1.2, 6.0, 2.3]\n[5.0, 0.5, 0.6, 1.0, 1.1]\n[30.0, 3.0, 6.0, 6.0, 12.0]\n[2.0, 0.2, 3.3, 0.4, 6.7]")
+			expect(@eti1.to_s).to eq("[50.0, 5.0, 7.1, 10.0, 14.3]\n[10.0, 1.0, 5.0, 2.0, 10.0]\n[15.0, 1.5, 6.0, 3.0, 12.0]\n[25.0, 2.5, 10.0, 5.0, 20.0]\n[30.0, 3.0, 1.2, 6.0, 2.3]\n[5.0, 0.5, 0.6, 1.0, 1.1]\n[20.0, 2.0, 0, 4.0, 0]\n[17.0, 1.7, 0, 3.4, 0]\n[15.0, 1.5, 0, 3.0, 0]\n[30.0, 3.0, 6.0, 6.0, 12.0]\n[2.0, 0.2, 3.3, 0.4, 6.7]")
 		end
 	end
 
