@@ -2,10 +2,10 @@
 #
 
 class Etiqueta
-        attr_reader :nombre, :valorKj, :valorKcal, :grasas, :saturadas, :hidratos, :azucares, :proteinas, :sal, :porciones, :gramos_porciones, :peso
+        attr_reader :nombre, :valorKj, :valorKcal, :grasas, :saturadas, :monoin, :hidratos, :azucares, :proteinas, :sal, :porciones, :gramos_porciones, :peso
 
-        def initialize(nombre,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso)
-                @nombre, @grasas, @saturadas, @hidratos, @azucares, @proteinas, @sal,@porciones,@gramos_porciones,@peso = nombre,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso
+        def initialize(nombre,grasas,saturadas,monoin,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso)
+                @nombre, @grasas, @saturadas, @monoin, @hidratos, @azucares, @proteinas, @sal,@porciones,@gramos_porciones,@peso = nombre,grasas,saturadas,monoin,hidratos,azucares,proteinas,sal,porciones,gramos_porciones,peso
                 @valorKj=(@grasas*37)+(@saturadas*37)+(@hidratos*17)+(@azucares*10)+(@proteinas*17)+(@sal*25)
                 @valorKcal=(@grasas*9)+(@saturadas*9)+(@hidratos*4)+(@azucares*2.4)+(@proteinas*4)+(@sal*6)
 
@@ -56,6 +56,18 @@ class Etiqueta
                 [ @saturadas , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
         end
 
+
+	# Funciones para las grasas monoinsaturadas
+	def asignar_monoin(monoin)
+		@monoin=monoin
+	end
+	def get_monoin
+                @_100=((@monoin*100)/@peso)
+                @ir_100=(@_100/25)*100
+                @porcion=((@monoin*@gramos_porciones)/@peso)
+                @ir_porcion=(@porcion/25)*100
+                [ @monoin , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
+        end
 
 
 
