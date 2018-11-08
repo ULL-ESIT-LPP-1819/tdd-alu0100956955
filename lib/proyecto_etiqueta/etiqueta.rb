@@ -120,9 +120,10 @@ class Etiqueta
         end
 
 
-
+	
 	# Funcion para mostrar la tabla
         def to_s()
+                "#{get_grasas()}\n#{get_saturadas()}\n#{get_hidratos()}\n#{get_azucares()}\n#{get_proteinas()}\n#{get_sal()}"
         end
 
 
