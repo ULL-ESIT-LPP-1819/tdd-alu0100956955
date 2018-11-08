@@ -70,6 +70,20 @@ class Etiqueta
         end
 
 
+	# Funciones para las grasas Poliinsaturadas
+        def asignar_poli(poli)
+                @poli=poli
+        end
+        def get_poli
+                @_100=((@poli*100)/@peso)
+                @ir_100=(@_100/25)*100
+                @porcion=((@poli*@gramos_porciones)/@peso)
+                @ir_porcion=(@porcion/25)*100
+                [ @poli , @_100 , @ir_100.round(1) , @porcion , @ir_porcion.round(1) ]
+        end
+
+
+
 
 
         # Funciones para los hidratos de carbono
