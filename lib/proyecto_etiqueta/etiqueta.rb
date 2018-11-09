@@ -198,7 +198,7 @@ class Etiqueta
 end
 
 
-#e = Etiqueta.new("carne",65.0,23.0,5.0,30.0,260.0,1.0,5,200,1000)
+#e = Etiqueta.new("carne",65.0,23.0,17.0,23.0,5.0,30.0,38.0,65.0,260.0,1.0,5,200,1000)
 #puts("[ g , 100g , IR% , prcn , IR prcn]")
 #puts(e.to_s())
 
