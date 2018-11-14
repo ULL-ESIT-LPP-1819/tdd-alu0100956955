@@ -23,6 +23,13 @@ RSpec.describe ProyectoEtiqueta do
 		expect(@l.head.value).to eq(3)
 	end
 
+	it "Extraigo un elemento de la cabeza" do
+            @l.insert_tail(@n1)
+            @l.insert_tail(@n2)
+            @l.extract_head()
+            expect(@l.head.value).to eq(2)
+        end
+
     end
 
 end
