@@ -36,6 +36,10 @@ RSpec.describe ProyectoEtiqueta do
 		expect(@l.tail.value).to eq(3)
 	end
 
+	it "Compruebo si la lista esta vacia" do
+		expect(@l.vacio?).to eq(TRUE)
+	end
+
     end
 
 end
