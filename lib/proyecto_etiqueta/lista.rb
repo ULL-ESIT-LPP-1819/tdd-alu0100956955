@@ -35,6 +35,16 @@ class Lista
         end
     end
 
+    def extract_head () # extraemos por cabeza ( este es el que usaremos para practica 7)
+        if (@head==NIL)
+            puts "Sin elementos en la lista"
+        else
+            @head = @head.nest
+            @head.prev = NIL
+            #@head.prev.next = NIL
+            end
+    end
+
 
 
 end
