@@ -23,6 +23,18 @@ class Lista
         end
     end
 
+    def insert_head (nodo)  # Insertar desde la cabeza
+        nodo.nest = @head
+        @head = nodo    # el head ahora apunta a este nodo
+        if (@tail == NIL)
+            @tail = nodo
+        end
+        nodo.prev = NIL
+        if (nodo.nest != NIL)
+            nodo.nest.prev = nodo
+        end
+    end
+
 
 
 end
