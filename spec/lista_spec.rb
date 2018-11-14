@@ -8,7 +8,20 @@ RSpec.describe ProyectoEtiqueta do
         @n2 = Node.new(2,NIL,NIL)
 	@n3 = Node.new(3,NIL,NIL)
 	@l =Lista.new(NIL,NIL)
+
+	@et1=Etiqueta.new("carne",10.0,15.0,25.0,30.0,5.0,20.0,17.0,15.0,30.0,2.0,5,200,1000)
+	@et2=Etiqueta.new("alimento2",2,2,2,2,2,2,2,2,2,2,3,100,300)
+	@et3=Etiqueta.new("alimento3",2,2,2,2,2,2,2,5,5,5,3,100,300)
+	@et4=Etiqueta.new("alimento4",2,2,2,2,2,2,2,6,6,6,3,100,300)
+	@et5=Etiqueta.new("alimento5",2,2,2,2,2,2,2,7,7,7,3,100,300)
+	@nd1= Node.new(@et1,NIL,NIL)
+	@nd2= Node.new(@et2,NIL,NIL)
+	@nd3= Node.new(@et3,NIL,NIL)
+	@nd4= Node.new(@et4,NIL,NIL)
+	@nd5= Node.new(@et5,NIL,NIL)
+
     end
+
 
     describe "# Pruebas de la lista" do
         it "Inserto Un elemento por la cola" do
@@ -50,5 +63,38 @@ RSpec.describe ProyectoEtiqueta do
 	end
 
     end
+
+
+    describe "# Pruebo la lista con los alimentos" do
+	it "Los conjuntos son correctos" do
+		conjunto_mayor = []
+		conjunto_menor = []
+
+		@l.insert_tail(@nd1)
+		@l.insert_tail(@nd2)
+		@l.insert_tail(@nd3)
+		@l.insert_tail(@nd4)
+		@l.insert_tail(@nd5)
+		#@l.insert_tail(@n1)
+
+		while !@l.vacio? do
+			aux = @l.extract_head
+			if(aux.value.sal<6)
+				conjunto_menor << aux.value
+			else
+				conjunto_mayor << aux.value
+			end
+		end
+		expect(conjunto_mayor.length).to eq(2)
+		expect(conjunto_menor.length).to eq(3)
+	end
+
+
+
+
+    end
+
+
+    
 
 end

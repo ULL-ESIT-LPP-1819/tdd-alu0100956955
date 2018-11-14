@@ -47,6 +47,7 @@ class Lista
 	    else
             	@head.prev = NIL
 	    end
+	    return aux
             
         end
     end
@@ -63,6 +64,7 @@ class Lista
 	    else
             	@tail.nest = NIL
 	    end
+	    return aux
             
         end
     end
@@ -73,6 +75,20 @@ class Lista
 	    else
 		    return FALSE
 	    end
+    end
+
+    def to_s ()
+	aux = @head
+	string= "("
+	while aux!=NIL
+		string+="["+aux.value.to_s+"]"
+		aux=aux.nest
+		if aux!=NIL
+			string+="-"
+		end
+	end
+	string +=")"
+	return string
     end
 
 
