@@ -11,11 +11,17 @@ RSpec.describe ProyectoEtiqueta do
     end
 
     describe "# Pruebas de la lista" do
-        it "Inserto Un elemento" do
+        it "Inserto Un elemento por la cola" do
             @l.insert_tail(@n1)
-            expect(@l.tail.value).to eq(1)
+	    @l.insert_tail(@n2)
+            expect(@l.tail.value).to eq(2)
             #expect(@eti1.nombre).to eq("carne")
         end
+	it "Inserto un elemento por la cabeza" do
+		@l.insert_head(@n2)
+		@l.insert_head(@n3)
+		expect(@l.head.value).to eq(3)
+	end
 
     end
 
