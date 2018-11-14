@@ -39,24 +39,36 @@ class Lista
         if (@head==NIL)
             puts "Sin elementos en la lista"
         else
+		aux = @head
             @head = @head.nest
-            @head.prev = NIL
-            #@head.prev.next = NIL
-            end
+	    aux.nest = NIL
+	    if(@head== NIL)
+		    @tail=NIL
+	    else
+            	@head.prev = NIL
+	    end
+            
+        end
     end
 
     def extract_tail ()
         if (@head==NIL)
             puts "Sin elementos en la lista"
         else
+		aux = @tail
             @tail = @tail.prev
-            @tail.nest = NIL
-            #return @aux
+	    aux.prev = NIL
+	    if (@tail== NIL)
+		    @head = NIL
+	    else
+            	@tail.nest = NIL
+	    end
+            
         end
     end
 
     def vacio? ()
-	    if((@head==NIL)&&(@tail==NIL))
+	    if((@tail==NIL)&&(@head==NIL))
 		    return TRUE
 	    else
 		    return FALSE

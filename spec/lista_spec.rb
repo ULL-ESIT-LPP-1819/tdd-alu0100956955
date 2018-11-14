@@ -37,7 +37,16 @@ RSpec.describe ProyectoEtiqueta do
 	end
 
 	it "Compruebo si la lista esta vacia" do
+		@l.insert_tail(@n1)
+		@l.extract_head()
 		expect(@l.vacio?).to eq(TRUE)
+	end
+
+	it "Compruebo el to_s" do
+		@l.insert_tail(@n3)
+		@l.insert_tail(@n2)
+                @l.insert_tail(@n1)
+		expect(@l.to_s).to eq("([3]-[2]-[1])")
 	end
 
     end
