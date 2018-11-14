@@ -45,6 +45,16 @@ class Lista
             end
     end
 
+    def extract_tail ()
+        if (@head==NIL)
+            puts "Sin elementos en la lista"
+        else
+            @tail = @tail.prev
+            @tail.nest = NIL
+            #return @aux
+        end
+    end
+
 
 
 end
