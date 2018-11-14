@@ -55,6 +55,15 @@ class Lista
         end
     end
 
+    def vacio? ()
+	    if((@head==NIL)&&(@tail==NIL))
+		    return TRUE
+	    else
+		    return FALSE
+	    end
+    end
+
+
 
 
 end
