@@ -1,5 +1,6 @@
 require "proyecto_etiqueta/version.rb"
 require "etiqueta.rb"
+require "lista.rb"
 
 
 module ProyectoEtiqueta

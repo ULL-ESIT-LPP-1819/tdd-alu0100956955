@@ -12,5 +12,9 @@ task :mostrar do
 
 end
 
+task :lista do
+        sh "rspec -I. spec/lista_spec.rb"
+end
+
 
 
