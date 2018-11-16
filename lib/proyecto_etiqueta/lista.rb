@@ -14,11 +14,11 @@ class Lista
 
         nodo.prev = @tail
         @tail = nodo
-        if (@head == NIL)
+        if (@head == nil)
             @head = nodo
         end
-        nodo.nest = NIL
-        if (nodo.prev != NIL)
+        nodo.nest = nil
+        if (nodo.prev != nil)
             nodo.prev.nest = nodo
         end
     end
@@ -26,26 +26,26 @@ class Lista
     def insert_head (nodo)  # Insertar desde la cabeza
         nodo.nest = @head
         @head = nodo    # el head ahora apunta a este nodo
-        if (@tail == NIL)
+        if (@tail == nil)
             @tail = nodo
         end
-        nodo.prev = NIL
-        if (nodo.nest != NIL)
+        nodo.prev = nil
+        if (nodo.nest != nil)
             nodo.nest.prev = nodo
         end
     end
 
     def extract_head () # extraemos por cabeza ( este es el que usaremos para practica 7)
-        if (@head==NIL)
+        if (@head==nil)
             puts "Sin elementos en la lista"
         else
 		aux = @head
             @head = @head.nest
-	    aux.nest = NIL
-	    if(@head== NIL)
-		    @tail=NIL
+	    aux.nest = nil
+	    if(@head== nil)
+		    @tail=nil
 	    else
-            	@head.prev = NIL
+            	@head.prev = nil
 	    end
 	    return aux
             
@@ -53,16 +53,16 @@ class Lista
     end
 
     def extract_tail ()
-        if (@head==NIL)
+        if (@head==nil)
             puts "Sin elementos en la lista"
         else
 		aux = @tail
             @tail = @tail.prev
-	    aux.prev = NIL
-	    if (@tail== NIL)
-		    @head = NIL
+	    aux.prev = nil
+	    if (@tail== nil)
+		    @head = nil
 	    else
-            	@tail.nest = NIL
+            	@tail.nest = nil
 	    end
 	    return aux
             
@@ -70,20 +70,20 @@ class Lista
     end
 
     def vacio? ()
-	    if((@tail==NIL)&&(@head==NIL))
-		    return TRUE
+	    if((@tail==nil)&&(@head==nil))
+		    return true
 	    else
-		    return FALSE
+		    return false
 	    end
     end
 
     def to_s ()
 	aux = @head
 	string= "("
-	while aux!=NIL
+	while aux!=nil
 		string+="["+aux.value.to_s+"]"
 		aux=aux.nest
-		if aux!=NIL
+		if aux!=nil
 			string+="-"
 		end
 	end

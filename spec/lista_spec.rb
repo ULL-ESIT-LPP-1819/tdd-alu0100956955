@@ -4,21 +4,21 @@ require 'proyecto_etiqueta/lista.rb'
 
 RSpec.describe ProyectoEtiqueta do
     before :each do
-        @n1 = Node.new(1,NIL,NIL)
-        @n2 = Node.new(2,NIL,NIL)
-	@n3 = Node.new(3,NIL,NIL)
-	@l =Lista.new(NIL,NIL)
+        @n1 = Node.new(1,nil,nil)
+        @n2 = Node.new(2,nil,nil)
+	@n3 = Node.new(3,nil,nil)
+	@l =Lista.new(nil,nil)
 
 	@et1=Etiqueta.new("carne",10.0,15.0,25.0,30.0,5.0,20.0,17.0,15.0,30.0,2.0,5,200,1000)
 	@et2=Etiqueta.new("alimento2",2,2,2,2,2,2,2,2,2,2,3,100,300)
 	@et3=Etiqueta.new("alimento3",2,2,2,2,2,2,2,5,5,5,3,100,300)
 	@et4=Etiqueta.new("alimento4",2,2,2,2,2,2,2,6,6,6,3,100,300)
 	@et5=Etiqueta.new("alimento5",2,2,2,2,2,2,2,7,7,7,3,100,300)
-	@nd1= Node.new(@et1,NIL,NIL)
-	@nd2= Node.new(@et2,NIL,NIL)
-	@nd3= Node.new(@et3,NIL,NIL)
-	@nd4= Node.new(@et4,NIL,NIL)
-	@nd5= Node.new(@et5,NIL,NIL)
+	@nd1= Node.new(@et1,nil,nil)
+	@nd2= Node.new(@et2,nil,nil)
+	@nd3= Node.new(@et3,nil,nil)
+	@nd4= Node.new(@et4,nil,nil)
+	@nd5= Node.new(@et5,nil,nil)
 
     end
 
@@ -52,7 +52,7 @@ RSpec.describe ProyectoEtiqueta do
 	it "Compruebo si la lista esta vacia" do
 		@l.insert_tail(@n1)
 		@l.extract_head()
-		expect(@l.vacio?).to eq(TRUE)
+		expect(@l.vacio?).to eq(true)
 	end
 
 	it "Compruebo el to_s" do
