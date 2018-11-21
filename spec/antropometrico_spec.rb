@@ -2,12 +2,16 @@ require 'proyecto_etiqueta/individuo.rb'
 require 'proyecto_etiqueta/antropometrico.rb'
 
 
-
 RSpec.describe ProyectoEtiqueta do
         before :each do
 		@l = Lista.new(nil,nil)
 		@et1=Etiqueta.new("carne",10.0,15.0,25.0,30.0,5.0,20.0,17.0,15.0,30.0,2.0,5,200,1000)
 		@a1=Antropometrico.new(18,1,69,1.6,69,68)
+		@a2=Antropometrico.new(23,0,80,1.75,84,74)
+                @a3=Antropometrico.new(24,0,60,1.4,75,75)
+                @a4=Antropometrico.new(25,0,75,1.90,56,50)
+                @a5=Antropometrico.new(69,1,110,2.0,75,75)
+
 	end
 
 	describe "# Pruebas para la clase lista"do
@@ -59,6 +63,32 @@ RSpec.describe ProyectoEtiqueta do
                 it "@a1 puede usar el metodo IMC" do
                         expect(@a1.respond_to?('IMC')).to eq(true)
                 end
+        end
+
+	 describe "# Lista con 5 pacientes" do
+		it"Los parametros de los pacientes estan dentro de lo establecido"do
+			@l.insert_tail(@a1)
+			@l.insert_tail(@a2)
+       			@l.insert_tail(@a3)
+       			@l.insert_tail(@a4)
+       			@l.insert_tail(@a5)
+
+                        aux =@l.extract_head()	# Primer paciente
+			expect(aux.value.IMC).to be>(25)
+
+			aux= @l.extract_head()	# Segundo paciente
+			expect(aux.value.IMC).to be>(26)
+
+			aux= @l.extract_head()	# Tercer paciente
+			expect(aux.value.IMC).to be>(27)
+
+			aux= @l.extract_head()	# Cuarto paciente
+			expect(aux.value.IMC).to be>(20)
+
+			aux= @l.extract_head()	# Quinto paciente
+			expect(aux.value.IMC).to be<(29)
+                end
+
         end
 
 
