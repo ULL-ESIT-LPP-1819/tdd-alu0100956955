@@ -10,8 +10,8 @@ class Lista
         @head, @tail = head,tail
     end
 
-    def insert_tail (nodo)  # Insertar desde la cola  ( este es el que usaremos para practica 7)
-
+    def insert_tail (value)  # Insertar desde la cola  ( este es el que usaremos para practica 7)
+	nodo=Node.new(value,nil,nil)
         nodo.prev = @tail
         @tail = nodo
         if (@head == nil)
@@ -23,7 +23,8 @@ class Lista
         end
     end
 
-    def insert_head (nodo)  # Insertar desde la cabeza
+    def insert_head (value)  # Insertar desde la cabeza
+	    nodo=Node.new(value,nil,nil)
         nodo.nest = @head
         @head = nodo    # el head ahora apunta a este nodo
         if (@tail == nil)
