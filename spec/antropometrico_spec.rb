@@ -41,6 +41,22 @@ RSpec.describe ProyectoEtiqueta do
                         expect(@et1.respond_to?('asignar_nombre')).to eq(true)
                 end
         end
+	
+	 describe "# Pruebas para la clase Antropometrico" do
+                it "@a1 es un objeto de la clase Antropometrico" do
+                        expect(@a1.class).to eq(Antropometrico)
+                end
+                it "@a1 es una instancia de Antropometrico" do
+                        expect(@a1.instance_of? Antropometrico).to eq(true)
+                end
+                it "@a1 es un objeto de la clase Antropometrico e hija de Individuo" do
+                        expect(@a1.is_a? Antropometrico).to eq(true)
+                        expect(@a1.is_a? Individuo).to eq(true)
+                end
+                it "@a1 puede usar el metodo IMC" do
+                        expect(@a1.respond_to?('IMC')).to eq(true)
+                end
+        end
 
 
 end
