@@ -63,6 +63,10 @@ RSpec.describe ProyectoEtiqueta do
                 it "@a1 puede usar el metodo IMC" do
                         expect(@a1.respond_to?('IMC')).to eq(true)
                 end
+
+		it "@a1 puede usar el metodo to_s" do
+			expect(@a1.to_s()).to eq()
+		end
         end
 
 	 describe "# Lista con 5 pacientes" do

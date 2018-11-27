@@ -7,7 +7,7 @@ require 'pry'
 require 'proyecto_etiqueta/individuo.rb'
 
 class Antropometrico < Individuo
-	attr_reader :edad , :sexo , :altura , :peso , :cintura , :cadera
+	attr_reader :edad , :sexo , :altura , :peso , :cintura , :cadera, :imc, :grasa, :relacion
 	def initialize ( edad , sexo , peso , altura , cintura , cadera)
 		@edad,@sexo,@altura,@peso,@cintura,@cadera = edad , sexo , altura , peso , cintura , cadera
 	end
@@ -70,6 +70,13 @@ class Antropometrico < Individuo
 				"Vas a morir"
 			end
 		end
+	end
+
+	def to_s()
+		string ="[ "
+		string += @edad +","+ @sexo + "," + @altura + "," + @peso + "," + @imc + "," + @grasa +"," + @relacion + " ]"
+		return string
+
 	end
 
 
