@@ -16,5 +16,13 @@ task :lista do
         sh "rspec -I. spec/lista_spec.rb"
 end
 
+task :antro do
+	sh "rspec -I. spec/antropometrico_spec.rb"
+end
+
+task :compa do
+	sh "rspec -I. spec/comparable_y_enumerable_spec.rb"
+end
+
 
 

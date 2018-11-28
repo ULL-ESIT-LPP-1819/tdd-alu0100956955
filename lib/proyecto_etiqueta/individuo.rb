@@ -1,4 +1,4 @@
-
+include Comparable
 
 class Individuo
 	attr_reader :nombre, :dni

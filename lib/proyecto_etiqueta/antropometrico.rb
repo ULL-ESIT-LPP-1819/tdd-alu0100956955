@@ -3,6 +3,7 @@
 # 		circunferencia cintura y circunferencia de cadera
 #
 
+include Comparable
 require 'pry'
 require 'proyecto_etiqueta/individuo.rb'
 
@@ -77,6 +78,10 @@ class Antropometrico < Individuo
 		string += @edad +","+ @sexo + "," + @altura + "," + @peso + "," + @imc + "," + @grasa +"," + @relacion + " ]"
 		return string
 
+	end
+
+	def <=> (aux)
+		self.IMC<=>aux.IMC
 	end
 
 

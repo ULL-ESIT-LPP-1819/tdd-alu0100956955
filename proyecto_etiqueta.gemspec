@@ -4,6 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "proyecto_etiqueta/version"
 require "proyecto_etiqueta/etiqueta"
 require "proyecto_etiqueta/lista.rb"
+require "proyecto_etiqueta/individuo.rb"
+require "proyecto_etiqueta/antropometrico.rb"
 
 Gem::Specification.new do |spec|
   spec.name          = "proyecto_etiqueta"
