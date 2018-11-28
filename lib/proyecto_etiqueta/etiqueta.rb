@@ -1,5 +1,6 @@
 # Practica 6, etiqueta
 #
+include Comparable
 
 class Etiqueta
         attr_reader :nombre, :valorKj, :valorKcal, :grasas, :saturadas, :monoin, :poli, :hidratos, :azucares, :alco, :almidon, :fibra, :proteinas, :sal, :porciones, :gramos_porciones, :peso
@@ -192,7 +193,9 @@ class Etiqueta
                 "#{get_grasas()}\n#{get_saturadas()}\n#{get_monoin()}\n#{get_poli()}\n#{get_hidratos()}\n#{get_azucares()}\n#{get_alco()}\n#{get_almidon()}\n#{get_fibra()}\n#{get_proteinas()}\n#{get_sal()}"
         end
 
-
+	def <=> (aux)
+		valorKj<=>aux.valorKj && valorKcal<=>aux.valorKcal	
+	end
 
 
 end
