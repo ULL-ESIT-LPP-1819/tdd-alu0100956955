@@ -1,10 +1,10 @@
 
-
+#include Enumerable
 Node = Struct.new(:value, :nest, :prev)
 
 
 class Lista
-
+	include Enumerable
     attr_reader :head, :tail
     def initialize(head , tail)
         @head, @tail = head,tail

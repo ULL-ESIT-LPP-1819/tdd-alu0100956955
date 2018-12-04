@@ -194,7 +194,7 @@ class Etiqueta
         end
 
 	def <=> (aux)
-		valorKj<=>aux.valorKj && valorKcal<=>aux.valorKcal	
+		self.valorKj<=>aux.valorKj && self.valorKcal<=>aux.valorKcal	
 	end
 
 
