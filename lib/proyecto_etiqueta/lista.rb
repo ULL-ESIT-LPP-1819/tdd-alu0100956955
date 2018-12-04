@@ -92,7 +92,13 @@ class Lista
 	return string
     end
 
-
+   def each
+            aux = @head
+            while aux!=nil
+                    yield aux.value
+                    aux=aux.nest
+            end
+    end
 
 
 end
