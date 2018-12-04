@@ -7,22 +7,26 @@ include Comparable
 require 'pry'
 require 'proyecto_etiqueta/individuo.rb'
 
+# Clase antropometrico , hija de indivuo
 class Antropometrico < Individuo
 	attr_reader :edad , :sexo , :altura , :peso , :cintura , :cadera, :imc, :grasa, :relacion
 	def initialize ( edad , sexo , peso , altura , cintura , cadera)
 		@edad,@sexo,@altura,@peso,@cintura,@cadera = edad , sexo , altura , peso , cintura , cadera
 	end
 
+	# Metodo Para calcular el IMC
 	def IMC
 		@imc=@peso/(@altura*@altura)
 		@imc.round(2) # esta función la uso para que solo coja 2 decimales y no ponga 10
 	end
 
+	# Metodo para calcular el porcentaje de grasa
 	def porcentaje_grasa
 		@grasa=1.2*@imc+0.23*@edad-10.8*@sexo-5.4
 		@grasa.round(2)
 	end
 
+	# Metodo que muestra la calificación del OMS 
 	def OMS # función que muesrta la calificación OMS en función del IMC
 		case @imc
 		when 0..18.5
@@ -41,7 +45,8 @@ class Antropometrico < Individuo
 			"problema con el valor a evaluar"
 		end
 	end
-
+	
+	# Metodo que indica la calificacion de grasa , dependiendo de la relación cintura/cadera
 	def distribucion_grasa
 		@relacion=@cintura/@cadera
 		if @sexo == 1
@@ -73,6 +78,7 @@ class Antropometrico < Individuo
 		end
 	end
 
+	# Convierte los datos antropometricos a string
 	def to_s()
 		string ="[ "
 		string += @edad +","+ @sexo + "," + @altura + "," + @peso + "," + @imc + "," + @grasa +"," + @relacion + " ]"
@@ -80,6 +86,7 @@ class Antropometrico < Individuo
 
 	end
 
+	# Metodo necesario para los metodos comparables
 	def <=> (aux)
 		self.IMC<=>aux.IMC
 	end

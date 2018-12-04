@@ -9,7 +9,8 @@ class Lista
     def initialize(head , tail)
         @head, @tail = head,tail
     end
-
+	
+    # Metodo para insertar por la cola
     def insert_tail (value)  # Insertar desde la cola  ( este es el que usaremos para practica 7)
 	nodo=Node.new(value,nil,nil)
         nodo.prev = @tail
@@ -23,6 +24,7 @@ class Lista
         end
     end
 
+    # Metodo para insertar por la cabeza
     def insert_head (value)  # Insertar desde la cabeza
 	    nodo=Node.new(value,nil,nil)
         nodo.nest = @head
@@ -36,6 +38,7 @@ class Lista
         end
     end
 
+    # Metodo para extraer por cabeza
     def extract_head () # extraemos por cabeza ( este es el que usaremos para practica 7)
         if (@head==nil)
             puts "Sin elementos en la lista"
@@ -53,6 +56,7 @@ class Lista
         end
     end
 
+    # Metodo para extraer por cola
     def extract_tail ()
         if (@head==nil)
             puts "Sin elementos en la lista"
@@ -70,6 +74,7 @@ class Lista
         end
     end
 
+    # Metodo para saber si la lista esta vacia
     def vacio? ()
 	    if((@tail==nil)&&(@head==nil))
 		    return true
@@ -78,6 +83,7 @@ class Lista
 	    end
     end
 
+    # Metodo para convertir la lista a formato string
     def to_s ()
 	aux = @head
 	string= "("
@@ -92,6 +98,7 @@ class Lista
 	return string
     end
 
+    # Metodo para poder llevar a cabo las operaciones de enumerable
    def each
             aux = @head
             while aux!=nil
