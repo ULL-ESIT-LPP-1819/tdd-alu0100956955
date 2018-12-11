@@ -9,9 +9,9 @@ require 'proyecto_etiqueta/individuo.rb'
 
 # Clase antropometrico , hija de indivuo
 class Antropometrico < Individuo
-	attr_reader :edad , :sexo , :altura , :peso , :cintura , :cadera, :imc, :grasa, :relacion
-	def initialize ( edad , sexo , peso , altura , cintura , cadera)
-		@edad,@sexo,@altura,@peso,@cintura,@cadera = edad , sexo , altura , peso , cintura , cadera
+	attr_reader :edad , :sexo , :altura , :peso , :cintura , :cadera, :imc, :grasa, :relacion, :factor_fisico
+	def initialize ( edad , sexo , peso , altura , cintura , cadera, factor_fisico)
+		@edad,@sexo,@altura,@peso,@cintura,@cadera,@factor_fisico = edad , sexo , altura , peso , cintura , cadera , factor_fisico
 	end
 
 	# Metodo Para calcular el IMC
