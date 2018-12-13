@@ -208,12 +208,18 @@ class Etiqueta
 
 	# Metodo para hacer funcional los metodos de comparable
 	def <=> (aux)
-		self.valorKj<=>aux.valorKj && self.valorKcal<=>aux.valorKcal	
+
+			self.valorKj<=>aux.valorKj && self.valorKcal<=>aux.valorKcal	
+	end
+
+	def +(other)	# Las porciones tiene que ser OBLIGATORIAMENTE uno en los DOS alimentos
+		#@valorKcal + other
+		 Etiqueta.new(@nombre+other.nombre , @saturadas+other.saturadas , @monoin+other.monoin , @poli+other.poli , @hidratos+other.hidratos , @azucares +other.azucares , @alco+other.alco , @almidon+other.almidon , @fibra+other.fibra , @proteinas+other.proteinas , @sal+other.sal , @porciones , @gramos_porciones+other.gramos_porciones , @peso+other.peso)
+
 	end
 
 
 end
-
 
 #e = Etiqueta.new("carne",65.0,23.0,17.0,23.0,5.0,30.0,38.0,65.0,260.0,1.0,5,200,1000)
 #puts("[ g , 100g , IR% , prcn , IR prcn]")
