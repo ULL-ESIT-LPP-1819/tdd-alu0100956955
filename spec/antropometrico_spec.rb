@@ -1,16 +1,16 @@
 require 'proyecto_etiqueta/individuo.rb'
-require 'proyecto_etiqueta/antropometrico.rb'
+require "proyecto_etiqueta/antropometrico.rb"
 
 
 RSpec.describe ProyectoEtiqueta do
         before :each do
 		@l = Lista.new(nil,nil)
 		@et1=Etiqueta.new("carne",10.0,15.0,25.0,30.0,5.0,20.0,17.0,15.0,30.0,2.0,5,200,1000)
-		@a1=Antropometrico.new(18,1,69,1.6,69,68)
-		@a2=Antropometrico.new(23,0,80,1.75,84,74)
-                @a3=Antropometrico.new(24,0,60,1.4,75,75)
-                @a4=Antropometrico.new(25,0,75,1.90,56,50)
-                @a5=Antropometrico.new(69,1,110,2.0,75,75)
+		@a1=Antropometrico.new(18,1,69,1.6,69,68,0.0)
+		@a2=Antropometrico.new(23,0,80,1.75,84,74,0.0)
+		@a3=Antropometrico.new(24,0,60,1.4,75,75,0.0)
+		@a4=Antropometrico.new(25,0,75,1.90,56,50,0.0)
+		@a5=Antropometrico.new(69,1,110,2.0,75,75,0.0)
 
 	end
 

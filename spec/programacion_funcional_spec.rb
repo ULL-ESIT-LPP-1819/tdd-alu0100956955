@@ -1,4 +1,4 @@
-
+require "proyecto_etiqueta/antropometrico.rb"
 
 RSpec.describe ProyectoEtiqueta do
 	before :each do

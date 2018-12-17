@@ -1,5 +1,5 @@
 #require 'proyecto_etiqueta/individuo.rb'
-#require 'proyecto_etiqueta/antropometrico.rb'
+require "proyecto_etiqueta/antropometrico.rb"
 
 
 
@@ -8,9 +8,9 @@ RSpec.describe ProyectoEtiqueta do
 		@et1=Etiqueta.new("carne",10.0,15.0,25.0,30.0,5.0,20.0,17.0,15.0,30.0,2.0,5,200,1000)
 		@et2=Etiqueta.new("Salmon",20.0,15.0,30.0,32.0,6.0,24.0,16.0,15.0,33.0,2.5,5,200,1000)
 		@et3=Etiqueta.new("hamburguesa",30.0,20.0,32.0,40.0,7.0,32.0,17.0,20.0,34.0,3.0,5,200,1000)
-		@ant1=Antropometrico.new(18,1,40,1.6,69,68)
-		@ant2=Antropometrico.new(24,0,60,1.9,75,75)
-		@ant3=Antropometrico.new(69,1,110,2.0,75,75)
+		@ant1=Antropometrico.new(18,1,40,1.6,69,68,0.12)
+		@ant2=Antropometrico.new(24,0,60,1.9,75,75,0.12)
+		@ant3=Antropometrico.new(69,1,110,2.0,75,75,0.12)
 		@l=Lista.new(nil,nil)
 		@l.insert_tail(@et1)
                 @l.insert_tail(@et2)

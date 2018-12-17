@@ -212,9 +212,9 @@ class Etiqueta
 			self.valorKj<=>aux.valorKj && self.valorKcal<=>aux.valorKcal	
 	end
 
-	def +(other)	# Las porciones tiene que ser OBLIGATORIAMENTE uno en los DOS alimentos
-		#@valorKcal + other
-		 Etiqueta.new(@nombre+other.nombre , @saturadas+other.saturadas , @monoin+other.monoin , @poli+other.poli , @hidratos+other.hidratos , @azucares +other.azucares , @alco+other.alco , @almidon+other.almidon , @fibra+other.fibra , @proteinas+other.proteinas , @sal+other.sal , @porciones , @gramos_porciones+other.gramos_porciones , @peso+other.peso)
+	def +(other)	# Las porciones tiene que ser OBLIGATORIAMENTE uno en los DOS alimentos, en caso de que se sume atributo a atributo
+		@valorKcal + other.valorKcal
+		# Etiqueta.new(@nombre+other.nombre , @saturadas+other.saturadas , @monoin+other.monoin , @poli+other.poli , @hidratos+other.hidratos , @azucares +other.azucares , @alco+other.alco , @almidon+other.almidon , @fibra+other.fibra , @proteinas+other.proteinas , @sal+other.sal , @porciones , @gramos_porciones+other.gramos_porciones , @peso+other.peso)
 
 	end
 
