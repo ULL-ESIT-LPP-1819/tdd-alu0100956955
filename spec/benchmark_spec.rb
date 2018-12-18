@@ -26,7 +26,11 @@ RSpec.describe ProyectoEtiqueta do
 		@array_etiquetas = [@et3,@et2,@et1,@et5,@et4,@et7,@et6]
 
 		@lista_individuos = Lista.new(nil,nil)
-
+		@lista_individuos.insert_tail(@ant5)
+		@lista_individuos.insert_tail(@ant3)
+		@lista_individuos.insert_tail(@ant2)
+		@lista_individuos.insert_tail(@ant4)
+		@lista_individuos.insert_tail(@ant1)
 
 	end
 
@@ -49,6 +53,23 @@ RSpec.describe ProyectoEtiqueta do
 		end
 		
 	end
+	describe "# Pruebas con la LISTA" do
+		it "El Benchmark muestra correctamente los resultados" do
+
+		
+			Benchmark.bm do |x|
+				x.report("for :") {@lista_individuos.ordenar_for}
+				x.report("sort:") {@lista_individuos.sort}
+			end
+		end
+		it"Se ordena de forma correcta con el FOR"do
+			expect(@lista_individuos.ordenar_for).to eq([@ant4,@ant1,@ant5,@ant2,@ant3])
+		end
+		it "Se ordena de forma correcta con el SORT"do
+			expect(@lista_individuos.sort).to eq([@ant4,@ant1,@ant5,@ant2,@ant3])
+		end
+	end
+
 
 
 end

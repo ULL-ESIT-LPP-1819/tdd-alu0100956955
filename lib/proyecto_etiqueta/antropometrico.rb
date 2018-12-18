@@ -88,7 +88,7 @@ class Antropometrico < Individuo
 
 	# Metodo necesario para los metodos comparables
 	def <=> (aux)
-		self.IMC<=>aux.IMC
+		self.gasto_energetico_total<=>aux.gasto_energetico_total
 	end
 
 
