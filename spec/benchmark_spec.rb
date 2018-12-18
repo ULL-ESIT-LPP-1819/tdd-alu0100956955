@@ -1,6 +1,5 @@
 require 'benchmark'
 require "proyecto_etiqueta/antropometrico.rb"
-#require "proyecto_etiqueta/funciones_array.rb"
 
 
 RSpec.describe ProyectoEtiqueta do
@@ -35,11 +34,15 @@ RSpec.describe ProyectoEtiqueta do
 		it " El Benchmark muestra correctamente los resultados" do
 			Benchmark.bm do |x|
 				x.report("for: ") {@array_etiquetas.ordenar_for }
+				x.report("each:") {@array_etiquetas.ordenar_each }
 				x.report("sort:") { @array_etiquetas.sort }
 			end
 		end
 		it "Se ordena de forma correcta con el FOR" do
 			expect(@array_etiquetas.ordenar_for).to eq([@et6,@et4,@et7,@et5,@et1,@et2,@et3])
+		end
+		it " Se ordena de forma correcta con el EACH"do
+			expect(@array_etiquetas.ordenar_each).to eq([@et6,@et4,@et7,@et5,@et1,@et2,@et3])
 		end
 		it "Se ordena de forma correcta con el SORT" do
 	                expect(@array_etiquetas.sort).to eq([@et6,@et4,@et7,@et5,@et1,@et2,@et3])
