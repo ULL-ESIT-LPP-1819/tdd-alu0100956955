@@ -235,6 +235,13 @@ class Array
 		end
 		@aux
 	end
+
+	def ordenar_each
+		@aux=[]
+		aux_self=self.clone
+		(0..self.size-1).each{|i| min=aux_self.min; @aux << min; aux_self.delete(min)}
+		@aux
+	end
 end
 
 
