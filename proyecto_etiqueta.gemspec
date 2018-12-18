@@ -6,6 +6,7 @@ require "proyecto_etiqueta/etiqueta"
 require "proyecto_etiqueta/lista.rb"
 require "proyecto_etiqueta/individuo.rb"
 #require "proyecto_etiqueta/antropometrico.rb"
+#require "proyecto_etiqueta/funciones_array.rb"
 
 Gem::Specification.new do |spec|
   spec.name          = "proyecto_etiqueta"

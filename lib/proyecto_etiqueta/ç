@@ -222,8 +222,8 @@ class Etiqueta
 end
 
 class Array
-	def ordenar_for
-		@aux = self
+	def ordenar_for(other)
+		@aux = other
 		for i in (0..@aux.size-1)
 			for j in (0..@aux.size-1)
 				if j+1 != @aux.size
