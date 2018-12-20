@@ -1,5 +1,5 @@
 require 'coveralls'
-Coveralls.wear
+Coveralls.wear!
 require "bundler/setup"
 #require "proyecto_etiqueta"
 require "proyecto_etiqueta/etiqueta.rb"
