@@ -73,6 +73,7 @@ DEPENDENCIES
   proyecto_etiqueta!
   rake (~> 10.0)
   rspec (~> 3.0)
+coveralls
 
 BUNDLED WITH
    1.17.1
