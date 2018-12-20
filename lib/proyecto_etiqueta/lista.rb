@@ -107,4 +107,53 @@ class Lista
             end
     end
 
+
+   #def swap (A,B)
+	   
+   #end
+
+
+   def ordenar_for
+	   @lista = self.map{ |a| a }
+	   	for i in (0..@lista.count-1)
+			for j in (0..@lista.count-1)
+				if j+1 != @lista.count
+                                        if @lista[j+1] < @lista[j]
+						@lista[j],@lista[j+1] = @lista[j+1],@lista[j]
+        				end
+
+				end
+			end
+		end
+		@lista
+   end
+
+   #def ordenar_for
+
+
 end
+
+class Array
+        def ordenar_for
+                @aux = self
+                for i in (0..@aux.size-1)
+                        for j in (0..@aux.size-1)
+                                if j+1 != @aux.size
+                                        if @aux[j+1] < @aux[j]
+                                                @aux[j],@aux[j+1] = @aux[j+1], @aux[j]
+                                        end
+                                end
+                        end
+                end
+                @aux
+        end
+
+        def ordenar_each
+                @aux=[]
+                aux_self=self.clone
+                (0..self.size-1).each{|i| min=aux_self.min; @aux << min; aux_self.delete(min)}
+                @aux
+        end
+end
+
+

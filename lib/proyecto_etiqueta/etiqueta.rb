@@ -219,39 +219,7 @@ class Etiqueta
 	end
 
 
+
 end
-
-class Array
-	def ordenar_for
-		@aux = self
-		for i in (0..@aux.size-1)
-			for j in (0..@aux.size-1)
-				if j+1 != @aux.size
-					if @aux[j+1] < @aux[j]
-						@aux[j],@aux[j+1] = @aux[j+1], @aux[j]
-					end
-				end
-			end
-		end
-		@aux
-	end
-
-	def ordenar_each
-		@aux=[]
-		aux_self=self.clone
-		(0..self.size-1).each{|i| min=aux_self.min; @aux << min; aux_self.delete(min)}
-		@aux
-	end
-end
-
-
-#e = Etiqueta.new("carne",65.0,23.0,17.0,23.0,5.0,30.0,38.0,65.0,260.0,1.0,5,200,1000)
-#puts("[ g , 100g , IR% , prcn , IR prcn]")
-#puts(e.to_s())
-
-
-
-
-
 
 
