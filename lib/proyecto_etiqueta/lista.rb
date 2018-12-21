@@ -128,7 +128,19 @@ class Lista
 		@lista
    end
 
-   #def ordenar_for
+   def ordenar_each
+	   @aux = self.map { |x| x}
+	   @pos = 0
+
+	   @aux.each do |x|
+		   @pos = @pos +1
+		   @aux[@pos..@aux.length-1] do |y|
+			   if (x>y)
+				   x,y = y,x
+			   end
+		   end
+	   end
+   end
 
 
 end

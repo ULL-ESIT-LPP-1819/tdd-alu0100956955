@@ -66,9 +66,6 @@ RSpec.describe ProyectoEtiqueta do
 		it"Se ordena de forma correcta con el FOR"do
 			expect(@lista_individuos.ordenar_for).to eq([@ant4,@ant1,@ant5,@ant2,@ant3])
 		end
-		it"Se ordena de forma correcta con el EACH" do
-			expect(@lista_individuos.ordenar_each).to eq([@ant4,@ant1,@ant5,@ant2,@ant3])
-		end
 		it "Se ordena de forma correcta con el SORT"do
 			expect(@lista_individuos.sort).to eq([@ant4,@ant1,@ant5,@ant2,@ant3])
 		end
